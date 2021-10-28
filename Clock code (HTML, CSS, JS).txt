@@ -1,0 +1,125 @@
+<!doctype html>
+<head>
+    <title>
+        My Clock
+    </title>
+<style>
+    body{
+        background: url(https://cdn.wallpapersafari.com/21/48/cpgaeG.jpg) no-repeat;
+        background-size: cover;
+    }
+    .main{
+        width:300px;
+        height: 400px;
+        border-radius: 30px;
+        background: url(https://media.istockphoto.com/photos/pocket-watch-in-the-sand-concept-of-time-passing-picture-id1205295743?s=612x612) no-repeat;
+        background-size: cover;
+        top: 50px;
+        margin: 30px auto;
+        padding: 100px;
+
+    }
+    .block{
+        width: 200px;
+        height: 100px;
+        border-radius: 15px;
+        background-color: white;
+    
+        border: 5px solid black;
+        margin: 0 auto;
+    }
+    .block:hover{
+        background-color: gainsboro;
+    }
+    h1{
+        text-align: center;
+        color: rgba(255, 6, 6, 0.842);
+        padding: px;
+        font-size: 50px;    
+    }
+    h1:hover{
+        background-color: white;
+        opacity: 0.8;
+        color: black;
+    }
+    h2{
+        font-size: 30px;
+        text-align: center;
+        color: rgb(0, 0, 0);
+        padding: 10px;
+    
+        
+    }
+    .new{
+        width:120px;
+        height:50px;
+        font-size: 15px;
+        text-align: center;
+        align-items: center;
+        background-color: rgb(31, 158, 6);
+        color: white;
+        border-radius: 30px;
+        margin:90px;
+        padding:10px;
+    }
+    .new:hover{
+        background-color: greenyellow;
+        color: black;
+    }
+
+
+</style>
+</head>
+<body>
+    <div class="main">
+        <h1 id=>My clock </h1>
+        <div class="block">
+            <h2 id="clock"></h2>
+
+        </div>
+        <a href="C:\Users\Admin\Desktop\Clock\Stopwatch.html">
+            <button class="new">Stop Watch</button>
+        </a>
+    
+        
+    </div>
+    <script>
+        setInterval(dispalyclock,500);
+        function dispalyclock(){
+            var time=new Date();
+            var hr=time.getHours();
+            var min=time.getMinutes();
+            var sec=time.getSeconds();
+            var en = 'AM'
+
+            if(hr > 12){
+                en = 'PM'
+            }
+    
+
+            if(hr>12){
+                hr=hr-12;
+            }
+            if(hr==0){
+                hr=12;
+            }
+            if(hr<10){
+                hr='0'+hr;
+            }
+            if(min<10){
+                min='0'+min;
+            }
+            if(sec<10){
+                sec='0'+sec;
+            }
+            
+            document.getElementById('clock').innerHTML=hr+':'+min+':'+sec + " " +  en;
+
+        }
+    </script>
+</body>
+
+
+
+
+</html>
